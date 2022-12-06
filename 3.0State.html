@@ -19,16 +19,41 @@
   ></script>
   <script src="https://unpkg.com/@babel/standalone@7.20.6/babel.min.js"></script>
   <script type="text/babel">
+    /* 에러 */
+    // const root = document.getElementById("root");
+    // let counter = 0;
+
+    // function countUp() {
+    //   counter++;
+    //   render();
+    // }
+
+    // function render() {
+    //   ReactDOM.createRoot(root).render(<Container />);
+    // }
+
+    // function Container() {
+    //   return (
+    //     <div>
+    //       <h3>Total clicks: {counter}</h3>
+    //       <button onClick={countUp}>Click me</button>
+    //     </div>
+    //   );
+    // }
+
+    // render();
+
     const root = document.getElementById("root");
+    const DOM = ReactDOM.createRoot(root);
     let counter = 0;
 
     function countUp() {
       counter++;
-      render();
+      Render();
     }
 
     function render() {
-      ReactDOM.createRoot(root).render(<Container />);
+      return DOM.render(<Container />);
     }
 
     function Container() {
