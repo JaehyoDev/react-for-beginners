@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+  <script
+    crossorigin
+    src="https://unpkg.com/react@18/umd/react.development.js"
+  ></script>
+  <script
+    crossorigin
+    src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+  ></script>
+  <script src="https://unpkg.com/@babel/standalone@7.20.6/babel.min.js"></script>
+  <script type="text/babel">
+    const root = document.getElementById("root");
+    const DOM = ReactDOM.createRoot(root);
+
+    function App() {
+      // 1번과 2번의 결과는 같다. 2번을 사용하자.
+
+      // 1번 방법
+      //const data = React.useState(0);
+      //const counter = data[0];
+      //const modifier = data[1];
+
+      // 2번 방법
+      const [counter, modifier] = React.useState(0);
+
+      // 구조 분해 할당 구문 예시
+      // const x = [1, 2, 3];
+      // const [a, b, c] = x;
+      // a = 1, b = 2, c = 3 으로 출력된다.
+
+      return (
+        <div>
+          <h3>Total clicks: {counter}</h3>
+          <button>Click me</button>
+        </div>
+      );
+    }
+
+    DOM.render(<App />);
+  </script>
+</html>

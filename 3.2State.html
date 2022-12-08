@@ -20,20 +20,10 @@
   <script src="https://unpkg.com/@babel/standalone@7.20.6/babel.min.js"></script>
   <script type="text/babel">
     const root = document.getElementById("root");
+    const DOM = ReactDOM.createRoot(root);
 
     function App() {
-      //const data = React.useState(0);
-      //const counter = data[0];
-      //const modifier = data[1];
-
-      // 위의 방식과 같다.
       const [counter, setCounter] = React.useState(0);
-
-      // 예시
-      // const x = [1, 2, 3];
-      // const [a, b, c] = x;
-      // a
-      // 출력값은 1
 
       const onClick = () => {
         setCounter(counter + 1);
@@ -47,6 +37,6 @@
       );
     }
 
-    ReactDOM.createRoot(root).render(<App />);
+    DOM.render(<App />);
   </script>
 </html>
